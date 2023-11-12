@@ -1,17 +1,20 @@
-import pandas as pd
+import torch
+import time
+import numpy as np
+# this ensures that the current Mac_OS version is at least 12.3+
+# print(torch.backends.mps.is_available())
+# # this ensures that the current PyTorch installation was built with MPS activated.
+# print(torch.backends.mps.is_built())
+# # To run PyTorch code on the GPU, use torch.device("mps") analogous to torch.device("cuda") on an Nvidia GPU.
+# device = torch.device("mps")
+#
+# time1 = time.time()
+# time.sleep(10)
+# time2 = time.time()
+# print(time2 - time1)
 
-# 模拟你的数据
-data = {
-    '0': [-1.94002047, 0.46432001, 8.26596847, -1.94173],
-    '1': [-4.35562657, -0.6253842, 6.80255164, -5.04816],
-    '2': [-4.26363399, 0.17261163, 12.71763381, -2.9839],
-    '3': [-6.20259775, 0.46850783, 19.87563053, -4.2340]
-}
+columns_to_vector = {'T1': 15, 'T2': 25, 'S': 10}
+for key in columns_to_vector.keys():
+    print(key)
+    print(columns_to_vector[key])
 
-# 创建一个Pandas Series
-series = pd.Series(data)
-
-# 将Series转换为二维数组
-array = series.values.reshape(-1, 4)
-
-print(array)
