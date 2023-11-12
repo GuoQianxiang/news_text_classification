@@ -13,8 +13,13 @@ import numpy as np
 # time2 = time.time()
 # print(time2 - time1)
 
-columns_to_vector = {'T1': 15, 'T2': 25, 'S': 10}
-for key in columns_to_vector.keys():
-    print(key)
-    print(columns_to_vector[key])
+# 假设你有一个20*1的矩阵
+
+# 设置要重复的值
+value = [1,2,3,4]
+value = np.array(value)
+# 使用numpy的repeat函数来创建一个一维矩阵
+
+
+print(value*100)
 

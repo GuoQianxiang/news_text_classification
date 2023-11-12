@@ -27,6 +27,7 @@ def preprocess_clean(filename, cleaned_filename):
     data = cleaner.remove_punctuations(data, column_names)
     # Save cleaned data named 'cleaned_filename.csv'
     save_data(data, cleaned_filename)
+    return data
 
 
 def preprocess_convert(filename, converted_filename):
@@ -36,6 +37,7 @@ def preprocess_convert(filename, converted_filename):
     columns_to_vector = {'T1': 15, 'T2': 25, 'S': 10}
     data = converter.convert_data_to_vectors(data, columns_to_onehot, columns_to_vector)
     save_data(data, converted_filename)
+    return data
 
 
 if __name__ == '__main__':
