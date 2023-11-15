@@ -19,11 +19,11 @@ def save_data(data, wanted_filename):
     print('Saved data as %s in preprocess directory!!! Please check it!!!' % wanted_filename)
 
 
-def preprocess_clean(filename, cleaned_filename):
+def preprocess_clean(filename, cleaned_filename, is_test):
     data = open_file(filename)
     # Define which columns need to be cleaned
     column_names = ['T1', 'T2']
-    data = cleaner.remove_stopwords(data, column_names)
+    data = cleaner.remove_stopwords(data, column_names, is_test)
     data = cleaner.remove_punctuations(data, column_names)
     # Save cleaned data named 'cleaned_filename.csv'
     save_data(data, cleaned_filename)
@@ -40,6 +40,19 @@ def preprocess_convert(filename, converted_filename):
     return data
 
 
+def preprocess(filename, is_test):
+    print('------------------------------------------------------------------------')
+    preprocess_clean('../data/' + filename, 'cleaned_' + filename, is_test)
+    preprocess_convert('cleaned_' + filename, 'converted_' + filename)
+    print('------------------------------------------------------------------------')
+
+
 if __name__ == '__main__':
-    preprocess_clean('../data/training.csv', 'cleaned_training.csv')
-    preprocess_convert('cleaned_training.csv', 'converted_training.csv')
+    training_file = 'training.csv'
+    validation_file = 'validation.csv'
+    test_file = 'test.csv'
+    preprocess(training_file, False)
+    preprocess(validation_file, False)
+    preprocess(test_file, True)
+
+

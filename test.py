@@ -1,6 +1,8 @@
 import torch
 import time
 import numpy as np
+
+
 # this ensures that the current Mac_OS version is at least 12.3+
 # print(torch.backends.mps.is_available())
 # # this ensures that the current PyTorch installation was built with MPS activated.
@@ -13,13 +15,10 @@ import numpy as np
 # time2 = time.time()
 # print(time2 - time1)
 
-# 假设你有一个20*1的矩阵
 
-# 设置要重复的值
-value = [1,2,3,4]
-value = np.array(value)
-# 使用numpy的repeat函数来创建一个一维矩阵
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
 
 
-print(value*100)
-
+x = np.array([70, 10])
+print(sigmoid(x))

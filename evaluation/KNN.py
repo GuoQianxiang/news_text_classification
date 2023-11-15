@@ -1,10 +1,10 @@
-import utils
-import model.dataloader as dataloader
+import utils.utils as utils
+import utils.dataloader as dataloader
 from sklearn.metrics import f1_score
-from model.Knn import KNN
+from model.KNN import KNN
 
 if __name__ == '__main__':
-    training_data = dataloader.load('../preprocess/converted_training_data.csv')
+    training_data = dataloader.load('../preprocess/converted_training.csv')
     # 对引入的数据按照数据和标签进行切割
     x = training_data[:, :-1]  # 得到训练集的数据
     y = training_data[:, -1]  # 得到训练集的标签

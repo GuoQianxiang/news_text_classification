@@ -1,4 +1,4 @@
-﻿id,T1,T2,S,TO,S1,S2,class label
+﻿id,T1,T2,S,T0,S1,S2,class label
 59511,Microsoft Windows zero-day exploit hits the market with $90000 ...,"Russian hackers are selling a zero-day vulnerability for $90,000 which allegedly works against many different evolutions of the Microsoft",ZDNet,microsoft,0.071759259,0.014338483,2
 59512,Microsoft planning its own SIM cards: Report,Microsoft is testing a cellular data app that will let Windows 10 users connect to mobile networks without a contract. ,CNBC,microsoft,0,-0.1720618,2
 59517,Microsoft begins Windows 10 Mobile roll-out,"After nearly 9 months of waiting, Microsoft has finally released the Windows 10 Mobile update to select Lumia handsets. It won't be available to",MSPoweruser.com,microsoft,0.051031036,0.106600358,4

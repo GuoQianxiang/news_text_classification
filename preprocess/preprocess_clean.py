@@ -19,17 +19,18 @@ def open_file(filename):
 # 删除停用词的函数
 def search_stopwords(text):
     stop_words = set(stopwords.words('english'))  # 加载停用词列表
-    word_tokens = word_tokenize(text)  # 将文本拆分为单词
+    word_tokens = word_tokenize(str(text))  # 将文本拆分为单词
     filtered_words = [word for word in word_tokens if word.lower() not in stop_words]  # 过滤停用词
     return filtered_words
 
 
 # 读取csv文件并进行预处理
-def remove_stopwords(data, column_names):
+def remove_stopwords(data, column_names, is_test):
     # delete id column and black row
     print('Dropping black row and id column...')
     data = data.drop(columns='id')  # 去掉id列
-    data = data.dropna()  # 去掉空行
+    if not is_test:
+        data = data.dropna()  # 去掉空行
 
     # remove stopwords which are useless in text
     for column_name in column_names:
