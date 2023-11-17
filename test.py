@@ -1,7 +1,7 @@
 import torch
 import time
 import numpy as np
-
+import pandas as pd
 
 # this ensures that the current Mac_OS version is at least 12.3+
 # print(torch.backends.mps.is_available())
@@ -14,11 +14,10 @@ import numpy as np
 # time.sleep(10)
 # time2 = time.time()
 # print(time2 - time1)
+df = pd.DataFrame(columns=['label'])
+print(df)
+label_list = ['label1', 'label2', 'label3', 'label4']
 
+df['label'] = label_list
 
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
-
-
-x = np.array([70, 10])
-print(sigmoid(x))
+print(df)

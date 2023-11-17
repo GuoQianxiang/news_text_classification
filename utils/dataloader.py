@@ -36,3 +36,17 @@ def load(filename):
              data[i][6]))
 
     return final_data
+
+
+def predict(test_file, model):
+    test_data = load(test_file)
+    test_label = model.predict(test_data[:, :-1])
+
+    predict_result = pd.read_csv(test_file)
+    predict_result['class label'] = test_label
+    return predict_result
+
+
+def save_test(test_data, model_name):
+    test_data.to_csv('test_predicted_result_' + model_name + '.csv', index=False)
+    print('test_data has been saved as test_predicted_result_%s.csv!!!' % model_name)

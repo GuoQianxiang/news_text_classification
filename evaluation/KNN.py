@@ -17,3 +17,7 @@ if __name__ == '__main__':
 
     f1 = f1_score(y_test, y_prediction, average='macro')
     print("F1-score: {:.2f}".format(f1))
+
+    test_file = '../preprocess/converted_test.csv'
+    test_data = dataloader.predict(test_file, model)
+    dataloader.save_test(test_data, 'knn')
